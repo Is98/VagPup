@@ -1,5 +1,5 @@
 class java::config {
-	$javaVersion = jdk1.8.0_45,
+	$javaVersion = "jdk1.8.0_45",
 	
 	file { '/etc/profile.d/java.sh':
 		ensure => present,
