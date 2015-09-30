@@ -19,7 +19,10 @@ Vagrant.configure(2) do |config|
 		master.vm.provision "puppetinstall",
 			type: "shell",
 			path: "master.sh"
+		master.vm.synced_folder "modules/", "/etc/puppet/modules"
+		master.vm.synced_folder "manifests/", "/etc/puppet/manifests"
 	end
+	
 	for i in 1..agentCount 
 		config.vm.define "agent" + i.to_s do |agent|
 			agent.vm.hostname = agentHostnameStub + i.to_s
