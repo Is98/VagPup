@@ -6,20 +6,20 @@ class java::install {
 	
 	exec { 'retrieve file':
 		cwd => "/opt/",
-		command => "wget '${distServer}'/downloads/'${javaTarball}'",
+		command => "wget ${distServer}/downloads/${javaTarball}",
 	}
 	exec { 'unzip file':
 		cwd => "/opt/",
-		command => "tar zxvf '${javaTarball}'",
+		command => "tar zxvf ${javaTarball}",
 		require => Exec['retrieve file'],
 	}
 	exec { 'install java':
-		cwd => "/opt/'${javaVersion}'",
-		command => "update-alternatives --install '${installLocation}' java /opt/'${javaVersion}'/bin/java 2",
+		cwd => "/opt/${javaVersion}",
+		command => "update-alternatives --install ${installLocation} java /opt/${javaVersion}/bin/java 2",
 		require => Exec['unzip file'],
 	}
 	exec { 'set java':
-		cwd => "/opt/'${javaVersion}'",
+		cwd => "/opt/${javaVersion}",
 		command => "update-alternatives --config java -y",
 		require => Exec['install java'],
 	}
