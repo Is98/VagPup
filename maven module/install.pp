@@ -1,9 +1,13 @@
-class maven::install {
+class maven::install (
 	$distServer = "http://10.50.20.49:8080/aaron",
 	$mavenTarball = "apache-maven-3.3.3-bin.tar.gz",
 	$mavenVersion = "apache-maven-3.3.3",
 	$installLocation "/usr/bin/maven",
-	
+	)
+	{
+	Exec {
+		path => ["/usr/bin", "/bin", "/usr/local/sbin", "/sbin", "/usr/sbin"],
+	}
 	exec { 'retrieve file':
 		cwd => "/opt/",
 		command => "wget '${distServer}'/downloads/'${mavenTarball}'",
@@ -20,7 +24,7 @@ class maven::install {
 	}
 	exec { 'set maven':
 		cwd => "/opt/'${mavenVersion}'",
-		command => "update-alternatives --config maven -y",
+		command => "update-alternatives --config maven",
 		require => Exec['install maven'],
 	}
 
