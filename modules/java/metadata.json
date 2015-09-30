@@ -1,0 +1,14 @@
+{
+  "name": "alan-java",
+  "version": "0.1.0",
+  "author": "alan",
+  "summary": "yes",
+  "license": "Apache-2.0",
+  "source": "no",
+  "project_page": "maybe",
+  "issues_url": "no",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
