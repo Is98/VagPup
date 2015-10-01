@@ -7,7 +7,6 @@ Vagrant.configure(2) do |config|
 	agentCount = 1
 	
 	config.vm.provider :virtualbox do |masterVB|
-		masterVB.name = "masterCM"
 		masterVB.memory = 4096
 		masterVB.cpus = 2
 	end
