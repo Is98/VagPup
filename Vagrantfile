@@ -6,11 +6,18 @@ Vagrant.configure(2) do |config|
 	agentHostnameStub = "hagent"
 	agentCount = 1
 	
+	config.vm.provider :virtualbox do |masterVB|
+		masterVB.name = "masterCM"
+		masterVB.memory = 4096
+		masterVB.cpus = 2
+	end
+	
 		
 	config.vm.box = "ubuntu/trusty64"
 	config.vm.provision "all",
 		type: "shell",
-		path: "all.sh"
+		path: "all.sh",
+		run: "always"
 	
 	config.vm.define "master" do |master|
 		master.vm.hostname = masterHostname
@@ -30,7 +37,8 @@ Vagrant.configure(2) do |config|
 			agent.vm.provision "agent",
 				type: "shell",
 				path: "agent.sh",
-				args: [masterIP, masterFQDN, masterFQDN]
+				args: [masterIP, masterFQDN, masterFQDN],
+				run: "always"
 		end
 	end
 	
