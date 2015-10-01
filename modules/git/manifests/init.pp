@@ -1,4 +1,4 @@
-class git::config {
+class git {
 	include git::install
 	include git::config
 }
