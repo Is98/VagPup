@@ -6,6 +6,7 @@ class java::config (
 		ensure => present,
 		content => "export JAVA_HOME=/opt/${javaVersion}\n
 export JRE_HOME=/opt/${javaVersion}\n
-export PATH =\$PATH:/opt/${javaVersion}/bin:/opt/${javaVersion}/jre/bin/",
+export PATH=\$PATH:/opt/${javaVersion}/bin:/opt/${javaVersion}/jre/bin/",
+        mode => '0744',
 	}
 }
