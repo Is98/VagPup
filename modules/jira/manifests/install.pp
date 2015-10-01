@@ -1,5 +1,5 @@
 class jira::install(
-	$distServer = "http://10.50.20.49:8080/aaron",
+	$distServer = "http://10.50.20.18:8080/aaron",
 	$jiraBinfile = "atlassian-jira-6.4.9-x64.bin",
 	)
 	{
@@ -16,7 +16,7 @@ class jira::install(
 		command => "chmod a+x ${jiraBinfile}",
 		}
 	exec { 'install jirafile' 
-		o\n
-		command => "printf 'o\n2\n\n2\n8081\n8006\ny\n' | ./${jiraBinFile}"	
+		cwd => "/opt/",
+		command => "printf 'o\n2\n\n\n2\n8082\n8006\ny\n' | ./${jiraBinfile}"	,
 	}
 }
