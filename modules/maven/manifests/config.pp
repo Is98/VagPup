@@ -4,7 +4,7 @@ class maven::config (
 	{
 	file { '/etc/profile.d/mvn.sh':
 		ensure => present,
-		content => "export M2_HOME=/opt/${mavenVersion}\n
+		content => "export M2_HOME=/opt/${mavenVersion}
 export PATH =\$PATH:/opt/${mavenVersion}/bin",
 	}
 }

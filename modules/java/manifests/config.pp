@@ -4,8 +4,8 @@ class java::config (
 	{
 	file { '/etc/profile.d/java.sh':
 		ensure => present,
-		content => "export JAVA_HOME=/opt/${javaVersion}\n
-export JRE_HOME=/opt/${javaVersion}\n
+		content => "export JAVA_HOME=/opt/${javaVersion}
+export JRE_HOME=/opt/${javaVersion}
 export PATH=\$PATH:/opt/${javaVersion}/bin:/opt/${javaVersion}/jre/bin/",
         mode => '0744',
 	}

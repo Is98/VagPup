@@ -3,4 +3,6 @@ node 'hagent1.netbuilder.private' {
 	include maven
 	include git
 	include jira
+	include jenkins
+	include nexus
 }
