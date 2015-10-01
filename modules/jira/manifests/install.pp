@@ -15,7 +15,7 @@ class jira::install(
 		cwd => "/opt/",
 		command => "chmod a+x ${jiraBinfile}",
 		}
-	exec { 'install jirafile' 
+	exec { 'install jirafile':
 		cwd => "/opt/",
 		command => "printf 'o\n2\n\n\n2\n8082\n8006\ny\n' | ./${jiraBinfile}"	,
 	}
