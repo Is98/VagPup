@@ -1,5 +1,5 @@
 class maven::install (
-	$distServer = "http://10.50.20.18:8080/aaron",
+	$distServer = "http://10.50.20.31:8080/aaron",
 	$mavenTarball = "apache-maven-3.3.3-bin.tar.gz",
 	$mavenVersion = "apache-maven-3.3.3",
 	$installLocation = "/usr/bin/mvn",

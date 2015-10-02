@@ -1,5 +1,5 @@
 class jira::install(
-	$distServer = "http://10.50.20.18:8080/aaron",
+	$distServer = "http://10.50.20.31:8080/aaron",
 	$jiraBinfile = "atlassian-jira-6.4.9-x64.bin",
 	)
 	{

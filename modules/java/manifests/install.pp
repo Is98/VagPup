@@ -1,5 +1,5 @@
 class java::install (
-	$distServer = "http://10.50.20.18:8080/aaron",
+	$distServer = "http://10.50.20.31:8080/aaron",
 	$javaTarball = "jdk-8u45-linux-x64.tar.gz",
 	$javaVersion = "jdk1.8.0_45",
 	$installLocation = "/usr/bin/java",
